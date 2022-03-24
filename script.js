@@ -25,9 +25,15 @@ let playRound = (playerSelection, computerSelection) => {
   return "You lose! " + computerSelection + " beats " + playerSelection + ".";
 };
 
-let result = window.prompt("Rock, paper, scissors says shoot!"); // this takes the input from the player
+// functions that have nothing to do with game logic
 
-let game = (userinput) => {
+// make images clickable
+const el = document.getElementById("scissor");
+el.addEventListener("click", modifyText, false);
+
+//let result = window.prompt("Rock, paper, scissors says shoot!"); // this takes the input from the player
+
+/*let game = (userinput) => {
   // a full game of 5 rounds, takes result as the input
   for (let i = 0; i < 5; i++) {
     // loops 5 times, 5 rounds
@@ -40,9 +46,9 @@ let game = (userinput) => {
   } else if (win < lose) {
     return "You lost!";
   } else return "It's a draw!";
-};
+};*/
 
-console.log(game(result));
+//console.log(game(result));
 
 // const playerSelection = "rock";
 // const computerSelection = computerPlay();

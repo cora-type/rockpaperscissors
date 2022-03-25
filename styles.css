@@ -25,4 +25,5 @@ body {
 
 .rock {
   cursor: pointer;
+  padding: 100px;
 }

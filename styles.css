@@ -8,17 +8,21 @@ body {
   margin: 0;
 }
 
-.icons {
+.iconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.head {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Braille", sans-serif;
   font-size: 25px;
   padding-top: 20px;
+}
+
+.rock {
+  cursor: pointer;
 }

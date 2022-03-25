@@ -27,7 +27,7 @@ let playRound = (playerSelection, computerSelection) => {
 
 // functions that have nothing to do with game logic
 
-// make images clickable
+// grab info from pictures
 const el = document.getElementById("scissor");
 el.addEventListener("click", modifyText, false);
 

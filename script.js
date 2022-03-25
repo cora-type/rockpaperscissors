@@ -28,8 +28,8 @@ let playRound = (playerSelection, computerSelection) => {
 // functions that have nothing to do with game logic
 
 // grab info from pictures
-const el = document.getElementById("scissor");
-el.addEventListener("click", modifyText, false);
+// const el = document.getElementById("scissor");
+// el.addEventListener("click", modifyText, false);
 
 //let result = window.prompt("Rock, paper, scissors says shoot!"); // this takes the input from the player
 

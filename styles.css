@@ -5,13 +5,14 @@
 }
 
 body {
+  text-align: center;
   margin: 0;
 }
 
 .iconContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -30,11 +31,16 @@ body {
 
 .paper {
   cursor: pointer;
-  padding: 100px;
 }
 
 .scissor {
   cursor: pointer;
+}
+
+#score {
+  font-family: "Quicksand", sans-serif;
+  font-size: 40px;
+  font-weight: 100;
 }
 
 /* fade in header and icons */

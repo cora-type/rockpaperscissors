@@ -12,24 +12,34 @@ let playRound = (playerSelection, computerSelection) => {
 
   if (p === "rock" && c === "scissors") {
     win = win + 1;
-    return "You Win! Rock beats Scissors!";
+    document.getElementById("score").innerHTML =
+      "You Win! Rock beats Scissors!";
+    //return "You Win! Rock beats Scissors!";
   } else if (p === "paper" && c === "rock") {
     win = win + 1;
-    return "You win! Paper beats Scissors!";
+    document.getElementById("score").innerHTML = "You Win! Paper beats Rock!";
+    //return "You win! Paper beats Rock!";
   } else if (p === "scissors" && c === "paper") {
     win = win + 1;
-    return "You win! Scissors beats Paper!";
+    document.getElementById("score").innerHTML =
+      "You Win! Scissors beats Paper!";
+    //return "You win! Scissors beats Paper!";
   } else if (p === c) {
-    return "It's a draw!";
+    //return "It's a draw!";
+    document.getElementById("score").innerHTML = "It's a draw ._.";
   } else lose = lose + 1;
-  return "You lose! " + computerSelection + " beats " + playerSelection + ".";
+  document.getElementById("score").innerHTML = "You Win! Rock beats Scissors!";
+  //return "You lose! " + computerSelection + " beats " + playerSelection + ".";
 };
 
 // functions that have nothing to do with game logic
 
-// grab info from pictures
-const el = document.getElementById("rock");
-el.addEventListener("click", modifyText, false);
+// // grab info from pictures
+// const el = document.getElementById("rock");
+// el.addEventListener("click", modifyText, false);
+
+document.getElementsByClassName("score").innerText =
+  win.toString + "v. " + lose.toString;
 
 //let result = window.prompt("Rock, paper, scissors says shoot!"); // this takes the input from the player
 

@@ -1,4 +1,8 @@
-let items = ["Rock", "Paper", "Scissors"];
+let items = ["rock", "Paper", "Scissors"];
+
+let rock = "rock";
+let paper = "paper";
+let scissors = "scissors";
 
 let win = 0;
 let lose = 0;
@@ -10,36 +14,68 @@ let playRound = (playerSelection, computerSelection) => {
   let p = playerSelection.toLowerCase();
   let c = computerSelection.toLowerCase();
 
-  if (p === "rock" && c === "scissors") {
-    win = win + 1;
-    document.getElementById("score").innerHTML =
-      "You Win! Rock beats Scissors!";
-    //return "You Win! Rock beats Scissors!";
-  } else if (p === "paper" && c === "rock") {
-    win = win + 1;
-    document.getElementById("score").innerHTML = "You Win! Paper beats Rock!";
-    //return "You win! Paper beats Rock!";
-  } else if (p === "scissors" && c === "paper") {
-    win = win + 1;
-    document.getElementById("score").innerHTML =
-      "You Win! Scissors beats Paper!";
-    //return "You win! Scissors beats Paper!";
-  } else if (p === c) {
-    //return "It's a draw!";
-    document.getElementById("score").innerHTML = "It's a draw ._.";
-  } else lose = lose + 1;
-  document.getElementById("score").innerHTML = "You Win! Rock beats Scissors!";
-  //return "You lose! " + computerSelection + " beats " + playerSelection + ".";
+  // compare, rock > scissors
+  if (p === rock && c === scissors) {
+    win++;
+    document.getElementById("round-status").innerHTML = "W rock beats scissors";
+  } else if (p === rock && c === paper) {
+    lose++;
+    document.getElementById("round-status").innerHTML = "L paper beats rock";
+  }
+
+  //compare, paper > rock
+
+  if (p == paper && c == rock) {
+    win++;
+    document.getElementById("round-status").innerHTML = "W paper beats rock";
+  } else if (p == paper && c == scissors) {
+    lose++;
+    document.getElementById("round-status").innerHTML =
+      "L scissors beats paper";
+  }
+
+  //compare, scissors > paper
+
+  if (p === scissors && c === paper) {
+    win++;
+    document.getElementById("round-status").innerHTML =
+      "W scissors beats paper";
+  } else if (p === scissors && c === rock) {
+    lose++;
+    document.getElementById("round-status").innerHTML = "L rock beats scissors";
+  }
+
+  //draw
+
+  if (p === c) {
+    document.getElementById("round-status").innerHTML = "its a draw ._.";
+  }
 };
+
+// if playerinput is absolutely equal to something and c is as well
+//   if (p == 'rock' && c == 'scissors') {
+//     win = win + 1;
+//     document.getElementById("score").innerHTML =
+//       'You Win! Rock beats Scissors!';
+//   } else if (p == 'paper' && c == 'rock') {
+//     win = win + 1;
+//     document.getElementById("score").innerHTML = "You Win! Paper beats Rock!";
+//   } else if (p == "scissors" && c == "paper") {
+//     win = win + 1;
+//     document.getElementById("score").innerHTML =
+//       "You Win! Scissors beats Paper!";
+//   } else if (p == c) {
+//     document.getElementById("score").innerHTML = "It's a draw ._.";
+//   } else lose = lose + 1;
+//   document.getElementById("score").innerHTML =
+//     "You lose! " + computerSelection + " beats " + playerSelection + ".";
+// };
 
 // functions that have nothing to do with game logic
 
 // // grab info from pictures
 // const el = document.getElementById("rock");
 // el.addEventListener("click", modifyText, false);
-
-document.getElementsByClassName("score").innerText =
-  win.toString + "v. " + lose.toString;
 
 //let result = window.prompt("Rock, paper, scissors says shoot!"); // this takes the input from the player
 

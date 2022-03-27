@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>t</title>
     <script src="script.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <!-- css effects -->
     <link href="css/hover.css" rel="stylesheet" media="all" />
@@ -13,6 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -26,16 +33,29 @@
           alt="r"
           width="300px"
           height="300px"
-          onclick="playRound('rock', 'scissors')"
+          onclick="playRound('rock', computerPlay())"
         />
       </div>
       <div class="paper hvr-grow">
-        <img src="./images/paper2.png" alt="p" width="300px" height="300px" />
+        <img
+          src="./images/paper2.png"
+          alt="p"
+          width="300px"
+          height="300px"
+          onclick="playRound('paper', computerPlay())"
+        />
       </div>
       <div class="scissor hvr-grow">
-        <img src="./images/x.png" alt="s" width="360px" height="360px" />
+        <img
+          src="./images/x.png"
+          alt="s"
+          width="360px"
+          height="360px"
+          onclick="playRound('scissors', computerPlay())"
+        />
       </div>
     </div>
-    <div id="score"></div>
+    <div class="current-score">0 - 0</div>
+    <div id="round-status">CLICK SOMETHING</div>
   </body>
 </html>

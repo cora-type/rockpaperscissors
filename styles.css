@@ -37,16 +37,22 @@ body {
   cursor: pointer;
 }
 
-#score {
+#round-status {
   font-family: "Quicksand", sans-serif;
   font-size: 40px;
   font-weight: 100;
 }
 
+.current-score {
+  padding-bottom: 100px;
+  font-family: "Press Start 2P", cursive;
+}
+
 /* fade in header and icons */
 
 .header,
-.iconContainer {
+.iconContainer,
+#round-status {
   animation: fadeIn 3s;
   -webkit-animation: fadeIn 3s;
   -moz-animation: fadeIn 3s;

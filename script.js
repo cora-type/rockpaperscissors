@@ -13,42 +13,67 @@ let playRound = (playerSelection, computerSelection) => {
   //takes player input and uses computerPlay as opponent input
   let p = playerSelection.toLowerCase();
   let c = computerSelection.toLowerCase();
+  let currentScore;
+
+  let roundDocument = document.getElementById("round-status"); // change the round winner text
+  let scoreDocument = document.getElementById("current-score"); // change the score text
 
   // compare, rock > scissors
   if (p === rock && c === scissors) {
-    win++;
-    document.getElementById("round-status").innerHTML = "W rock beats scissors";
+    ++win;
+    currentScore = win + "-" + lose; // note, for some reason defining current score like this outside the function returns 0 - 0 instead of 1 - 0 in the first round. not sure why.
+    roundDocument.innerHTML = "user wins. rock beats scissors";
+    scoreDocument.innerHTML = currentScore;
   } else if (p === rock && c === paper) {
-    lose++;
-    document.getElementById("round-status").innerHTML = "L paper beats rock";
+    ++lose;
+    currentScore = win + "-" + lose;
+    roundDocument.innerHTML = "computer wins. paper beats rock";
+    scoreDocument.innerHTML = currentScore;
   }
 
   //compare, paper > rock
 
   if (p == paper && c == rock) {
-    win++;
-    document.getElementById("round-status").innerHTML = "W paper beats rock";
+    ++win;
+    currentScore = win + "-" + lose;
+    roundDocument.innerHTML = "user wins. paper beats rock";
+    scoreDocument.innerHTML = currentScore;
   } else if (p == paper && c == scissors) {
-    lose++;
-    document.getElementById("round-status").innerHTML =
-      "L scissors beats paper";
+    ++lose;
+    currentScore = win + "-" + lose;
+    roundDocument.innerHTML = "computer wins. scissors beats paper";
+    scoreDocument.innerHTML = currentScore;
   }
 
   //compare, scissors > paper
 
   if (p === scissors && c === paper) {
-    win++;
-    document.getElementById("round-status").innerHTML =
-      "W scissors beats paper";
+    ++win;
+    currentScore = win + "-" + lose;
+    roundDocument.innerHTML = "user wins. scissors beats paper";
+    scoreDocument.innerHTML = currentScore;
   } else if (p === scissors && c === rock) {
-    lose++;
-    document.getElementById("round-status").innerHTML = "L rock beats scissors";
+    ++lose;
+    currentScore = win + "-" + lose;
+    roundDocument.innerHTML = "computer wins. rock beats scissors";
+    scoreDocument.innerHTML = currentScore;
   }
 
   //draw
 
   if (p === c) {
-    document.getElementById("round-status").innerHTML = "its a draw ._.";
+    roundDocument.innerHTML = "tie game.";
+  }
+};
+
+// score check
+
+let scoreCheck = (win, lose) => {
+  let roundDocument = document.getElementById("round-status");
+  if (win === 5) {
+    roundDocument.innerHTML = "user emerges bright. play again?";
+  } else if (lose === 5) {
+    roundDocument.innerHTML = "computer emerges bright. play again?";
   }
 };
 

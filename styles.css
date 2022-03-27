@@ -43,8 +43,9 @@ body {
   font-weight: 100;
 }
 
-.current-score {
-  padding-bottom: 100px;
+#current-score {
+  margin: 50px;
+  font-size: 30px;
   font-family: "Press Start 2P", cursive;
 }
 

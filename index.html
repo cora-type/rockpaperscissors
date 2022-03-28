@@ -33,7 +33,7 @@
           alt="r"
           width="300px"
           height="300px"
-          onclick="playRound('rock', computerPlay()), scoreCheck(win, lose)"
+          onclick="playRound('rock', computerPlay())"
         />
       </div>
       <div class="paper hvr-grow">
@@ -42,7 +42,7 @@
           alt="p"
           width="300px"
           height="300px"
-          onclick="playRound('paper', computerPlay()), scoreCheck(win, lose)"
+          onclick="playRound('paper', computerPlay())"
         />
       </div>
       <div class="scissor hvr-grow">
@@ -51,11 +51,14 @@
           alt="s"
           width="360px"
           height="360px"
-          onclick="playRound('scissors', computerPlay()), scoreCheck(win, lose)"
+          onclick="playRound('scissors', computerPlay() )"
         />
       </div>
     </div>
     <div id="current-score"></div>
-    <div id="round-status">CLICK SOMETHING</div>
+    <div id="round-status">choose one of the above to start</div>
+    <div id="looper" style="display: none">
+      <img src="./images/loop.png" width="10%" onclick="reset()" />
+    </div>
   </body>
 </html>

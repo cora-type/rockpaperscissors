@@ -37,6 +37,10 @@ body {
   cursor: pointer;
 }
 
+#looper {
+  cursor: pointer;
+}
+
 #round-status {
   font-family: "Quicksand", sans-serif;
   font-size: 40px;
@@ -47,6 +51,10 @@ body {
   margin: 50px;
   font-size: 30px;
   font-family: "Press Start 2P", cursive;
+}
+
+#looper {
+  transition: color 2s ease 0s;
 }
 
 /* fade in header and icons */

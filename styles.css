@@ -53,10 +53,6 @@ body {
   font-family: "Press Start 2P", cursive;
 }
 
-#looper {
-  transition: color 2s ease 0s;
-}
-
 /* fade in header and icons */
 
 .header,
